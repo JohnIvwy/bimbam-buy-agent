@@ -1,0 +1,19 @@
+# Entornos virtuales
+.venv/
+venv/
+env/
+
+# Variables de entorno
+.env
+
+# Caché de Python
+__pycache__/
+*.py[cod]
+
+# Base de datos vectorial persistida localmente
+faiss_index/
+
+# Archivos del sistema operativo e IDEs
+.DS_Store
+.vscode/
+.idea/
