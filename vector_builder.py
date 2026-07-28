@@ -56,7 +56,7 @@ def build_vector_index():
         embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001")
         
         # Procesamiento por lotes (Batching) para evitar Rate Limits (429) de la API gratuita
-        batch_size = 30
+        batch_size = 15
         vector_store = None
         
         for i in range(0, len(chunks), batch_size):
@@ -68,8 +68,8 @@ def build_vector_index():
                 vector_store.add_documents(batch)
             
             if i + batch_size < len(chunks):
-                print("Esperando 12 segundos para respetar límites de cuota (RPM)...")
-                time.sleep(12)
+                print("Esperando 15 segundos para respetar límites de cuota (RPM)...")
+                time.sleep(15)
                 
     except Exception as e:
         print(f"ERROR al generar embeddings o crear el índice FAISS: {e}", file=sys.stderr)
